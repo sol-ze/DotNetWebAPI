@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetWebAPI\\DotNetUsersAPI.csproj": {}
+    "c:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetWebAPI\\DotNetUsersAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetWebAPI\\DotNetUsersAPI.csproj": {
+    "c:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetWebAPI\\DotNetUsersAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetWebAPI\\DotNetUsersAPI.csproj",
+        "projectUniqueName": "c:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetWebAPI\\DotNetUsersAPI.csproj",
         "projectName": "DotNetUsersAPI",
-        "projectPath": "C:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetWebAPI\\DotNetUsersAPI.csproj",
+        "projectPath": "c:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetWebAPI\\DotNetUsersAPI.csproj",
         "packagesPath": "C:\\Users\\Hanin zindin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetWebAPI\\obj\\",
+        "outputPath": "c:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetWebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Hanin zindin\\AppData\\Roaming\\NuGet\\NuGet.Config",
