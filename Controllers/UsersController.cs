@@ -1,26 +1,62 @@
 using Microsoft.AspNetCore.Mvc;
-using UsersAPI.Models;
+using UsersAPI.Dtos;
 using UsersAPI.Repositories;
 
-namespace UsersAPI.Controllers {
+namespace UsersAPI.Controllers
+{
 
-//GET /users
-[ApiController]
-[Route("users")]
+    //GET /users
+    [ApiController]
+    [Route("users")]
     public class UsersController : ControllerBase
     {
-        private readonly InMemUsersRepository usersRepository;
+        private readonly IUsersRepository repository;
 
-        public UsersController() {
-            usersRepository = new InMemUsersRepository();
+        public UsersController(IUsersRepository repository)
+        {
+            this.repository = repository;
         }
+
         [HttpGet]
-        public IEnumerable<User> GetUsers() {
-            var users = usersRepository.GetUsers();
+        public IEnumerable<UserDto> GetUsers()
+        {
+            var users = repository.GetUsers().Select(user => user.AsDto());
             return users;
         }
 
-        
+        //GET /items/{id}
+        [HttpGet("{id}")]
+        public ActionResult<UserDto> GetUser(int id)
+        {
+            var user = repository.GetUser(id);
+
+            if (user is null)
+            {
+                return NotFound();
+            }
+
+            return user.AsDto();
+        }
+
+        [HttpPost("createOTP")]
+        public async Task<IActionResult> SendOTP([FromBody] UserOTP userOtp)
+        {
+            try
+            {
+                if (userOtp is null || userOtp.Email is null)
+                    return StatusCode(400, new { Status = "Email cannot be null" });
+
+                if (userOtp.Email == "")
+                    return StatusCode(400, new { Status = "Email cannot be empty" });
+
+                await repository.SendOTP(userOtp);
+                return Ok(new { Status = "success" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Status = "fail", message = ex.Message });
+            }
+        }
     }
-    
+
 }

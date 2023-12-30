@@ -1,13 +1,19 @@
-namespace UsersAPI.Models {
-    public record User {
-        public Guid Id {get; init;}
+using System.ComponentModel.DataAnnotations.Schema;
 
-        public String Name {get;set;}
+namespace UsersAPI.Models
+{
+    public record User
+    {
+        public int Id { get; init; }
 
-        public String Email {get;set;}
+        public required String Name { get; set; }
 
-        public int IsVerified {get; set;}
+        public required String Email { get; set; }
 
-        public DateTimeOffset CreationDate{get; init;}
+        [Column("is_verified")]
+        public int IsVerified { get; set; }
+
+        [Column("creation_date")]
+        public DateTimeOffset CreationDate { get; init; }
     }
 }

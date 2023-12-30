@@ -65,3 +65,12 @@ c:\Users\Hanin zindin\Documents\GitHub\DotNetUsersAPI\DotNetWebAPI\obj\Debug\net
 c:\Users\Hanin zindin\Documents\GitHub\DotNetUsersAPI\DotNetWebAPI\obj\Debug\net8.0\DotNetUsersAPI.pdb
 c:\Users\Hanin zindin\Documents\GitHub\DotNetUsersAPI\DotNetWebAPI\obj\Debug\net8.0\DotNetUsersAPI.genruntimeconfig.cache
 c:\Users\Hanin zindin\Documents\GitHub\DotNetUsersAPI\DotNetWebAPI\obj\Debug\net8.0\ref\DotNetUsersAPI.dll
+c:\Users\Hanin zindin\Documents\GitHub\DotNetUsersAPI\DotNetWebAPI\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+c:\Users\Hanin zindin\Documents\GitHub\DotNetUsersAPI\DotNetWebAPI\bin\Debug\net8.0\MailKit.dll
+c:\Users\Hanin zindin\Documents\GitHub\DotNetUsersAPI\DotNetWebAPI\bin\Debug\net8.0\MimeKit.dll
+c:\Users\Hanin zindin\Documents\GitHub\DotNetUsersAPI\DotNetWebAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
+c:\Users\Hanin zindin\Documents\GitHub\DotNetUsersAPI\DotNetWebAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+c:\Users\Hanin zindin\Documents\GitHub\DotNetUsersAPI\DotNetWebAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+c:\Users\Hanin zindin\Documents\GitHub\DotNetUsersAPI\DotNetWebAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+c:\Users\Hanin zindin\Documents\GitHub\DotNetUsersAPI\DotNetWebAPI\bin\Debug\net8.0\MySqlConnector.dll
+c:\Users\Hanin zindin\Documents\GitHub\DotNetUsersAPI\DotNetWebAPI\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
