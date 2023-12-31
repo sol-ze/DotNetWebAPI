@@ -24,19 +24,6 @@ namespace UsersAPI.Controllers
             return users;
         }
 
-        //GET /items/{id}
-        [HttpGet("{id}")]
-        public ActionResult<UserDto> GetUser(int id)
-        {
-            var user = repository.GetUser(id);
-
-            if (user is null)
-            {
-                return NotFound();
-            }
-
-            return user.AsDto();
-        }
 
         [HttpPost("createOTP")]
         public async Task<IActionResult> SendOTP([FromBody] UserOTP userOtp)

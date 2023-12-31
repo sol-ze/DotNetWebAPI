@@ -8,6 +8,9 @@ namespace UsersAPI.Services
         //Get C temp for a location
         public static async Task<double> GetTempOflocation(string location)
         {
+            if (location is null || location.Equals(""))
+                return 0;
+
             string apiUrl = $"http://api.weatherapi.com/v1/current.json?key={API_KEY}&q={location}";
             WeatherApiResponse weatherResponse = await GetWeatherAsync(apiUrl);
 

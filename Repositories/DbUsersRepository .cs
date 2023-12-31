@@ -3,6 +3,7 @@ using UsersAPI.Services;
 using UsersAPI.Dtos;
 using UsersAPI.Data;
 using Name;
+using Microsoft.Extensions.ObjectPool;
 
 namespace UsersAPI.Repositories
 {
@@ -19,11 +20,6 @@ namespace UsersAPI.Repositories
         {
             return db.Users.ToList();
         }
-        public User GetUser(int id)
-        {
-            return db.Users.Where(user => user.Id == id).SingleOrDefault();
-        }
-
         public async Task<string> SendOTP(UserOTP user)
         {
             IEnumerable<City> cities = db.City.ToList();
@@ -47,12 +43,11 @@ namespace UsersAPI.Repositories
             String code = t1.ConvertDoubleToString() + t2.ConvertDoubleToString() + t3.ConvertDoubleToString();
 
             EmailSender.SendEmail(user.Email, "Your verification code", "Your verification code is: " + code);
-            int userId = db.Users.FirstOrDefault(u => u.Email == user.Email).Id;
 
 
             db.UserVerificationCodes.Add(new UserVerificationCode
             {
-                UserId = userId,
+                Email = user.Email,
                 Code = code,
                 CreationTime = DateTimeOffset.UtcNow
             });

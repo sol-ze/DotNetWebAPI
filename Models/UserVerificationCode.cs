@@ -6,8 +6,7 @@ namespace Name
     public record UserVerificationCode
     {
         public int Id { get; init; }
-        [Column("user_id")]
-        public int UserId { get; set; }
+        public required string Email { get; set; }
 
         public required String Code { get; set; }
         [Column("creation_time")]
