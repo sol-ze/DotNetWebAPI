@@ -1,9 +1,8 @@
 using UsersAPI.Models;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Http.Features;
 using UsersAPI.Services;
 using UsersAPI.Dtos;
 using UsersAPI.Data;
+using Name;
 
 namespace UsersAPI.Repositories
 {
@@ -45,8 +44,21 @@ namespace UsersAPI.Repositories
             double t2 = await WeatherApi.GetTempOflocation(city2);
             double t3 = await WeatherApi.GetTempOflocation(city3);
 
+            String code = t1.ConvertDoubleToString() + t2.ConvertDoubleToString() + t3.ConvertDoubleToString();
 
-            EmailSender.SendEmail(user.Email, "Your verification code", "Your verification code is: " + t1.ConvertDoubleToString() + t2.ConvertDoubleToString() + t3.ConvertDoubleToString());
+            EmailSender.SendEmail(user.Email, "Your verification code", "Your verification code is: " + code);
+            int userId = db.Users.FirstOrDefault(u => u.Email == user.Email).Id;
+
+
+            db.UserVerificationCodes.Add(new UserVerificationCode
+            {
+                UserId = userId,
+                Code = code,
+                CreationTime = DateTimeOffset.UtcNow
+            });
+
+            db.SaveChanges();
+
             return "success";
         }
     }
