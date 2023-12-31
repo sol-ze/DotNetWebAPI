@@ -38,6 +38,13 @@ namespace UsersAPI
             return str;
 
         }
+        public static int SelectRandomNumber(this int n)
+        {
+            Random random = new();
+            // Generate a random number between 1 and n
+            return random.Next(1, n + 1);
+
+        }
     }
 
 }

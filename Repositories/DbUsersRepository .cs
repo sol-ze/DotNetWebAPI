@@ -27,18 +27,28 @@ namespace UsersAPI.Repositories
 
         public async Task<string> SendOTP(UserOTP user)
         {
-            double t1 = await WeatherApi.GetTempOflocation("iceland");
-            double t2 = await WeatherApi.GetTempOflocation("kiel");
-            double t3 = await WeatherApi.GetTempOflocation("haifa");
+            IEnumerable<City> cities = db.City.ToList();
+            int size = cities.Count();
+
+            //select random number between 1 and list size
+            int randIndex1 = size.SelectRandomNumber();
+            int randIndex2 = size.SelectRandomNumber();
+            int randIndex3 = size.SelectRandomNumber();
+
+            //get city with index
+            string city1 = cities.FirstOrDefault(city => city.Id == randIndex1).CityName;
+            string city2 = cities.FirstOrDefault(city => city.Id == randIndex2).CityName;
+            string city3 = cities.FirstOrDefault(city => city.Id == randIndex3).CityName;
+
+            //get city temperature - call weatherAPI
+            double t1 = await WeatherApi.GetTempOflocation(city1);
+            double t2 = await WeatherApi.GetTempOflocation(city2);
+            double t3 = await WeatherApi.GetTempOflocation(city3);
+
 
             EmailSender.SendEmail(user.Email, "Your verification code", "Your verification code is: " + t1.ConvertDoubleToString() + t2.ConvertDoubleToString() + t3.ConvertDoubleToString());
             return "success";
         }
-
-        // public void CreateUser(User user)
-        // {
-        //     users.Add(user);
-        // }
     }
 
 }
