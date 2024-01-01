@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetWebAPI\\DotNetUsersAPI.csproj": {}
+    "C:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetUsersAPI.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetWebAPI\\DotNetUsersAPI.csproj": {
+    "C:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetUsersAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetWebAPI\\DotNetUsersAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetUsersAPI.csproj",
         "projectName": "DotNetUsersAPI",
-        "projectPath": "c:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetWebAPI\\DotNetUsersAPI.csproj",
+        "projectPath": "C:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetUsersAPI.csproj",
         "packagesPath": "C:\\Users\\Hanin zindin\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\DotNetWebAPI\\obj\\",
+        "outputPath": "C:\\Users\\Hanin zindin\\Documents\\GitHub\\DotNetUsersAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Hanin zindin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,6 +52,14 @@
               "target": "Package",
               "version": "[7.0.10, )"
             },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.7.1, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.70, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -63,6 +71,16 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.6.4, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.5.6, )"
             }
           },
           "imports": [
