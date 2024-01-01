@@ -1,4 +1,3 @@
-using System;
 using UsersAPI;
 using Xunit;
 
@@ -9,21 +8,18 @@ namespace UsersAPITests
         [Fact]
         public void TestConvertDoubleToString()
         {
-            // Arrange
             double number1 = 123.456;
             double number2 = 0;
             double number3 = -1;
             double number4 = -10;
             double number5 = 15.2;
 
-            // Act
             string result1 = number1.ConvertDoubleToString();
             string result2 = number2.ConvertDoubleToString();
             string result3 = number3.ConvertDoubleToString();
             string result4 = number4.ConvertDoubleToString();
             string result5 = number5.ConvertDoubleToString();
 
-            // Assert
             Assert.Equal("123", result1);
             Assert.Equal("00", result2);
             Assert.Equal("01", result3);
@@ -42,6 +38,25 @@ namespace UsersAPITests
 
             // Assert
             Assert.InRange(result, 1, n);
+        }
+
+        [Fact]
+        public void TestIsValidEmail()
+        {
+            // Arrange
+            String email1 = "solze@gmail.com";
+            String email2 = "";
+            String email3 = "badPattern";
+
+            // Act
+            Boolean result1 = email1.IsValidEmail();
+            Boolean result2 = email2.IsValidEmail();
+            Boolean result3 = email3.IsValidEmail();
+
+            // Assert
+            Assert.True(result1);
+            Assert.False(result2);
+            Assert.False(result3);
         }
     }
 }

@@ -3,7 +3,8 @@ using UsersAPI.Services;
 using UsersAPI.Dtos;
 using UsersAPI.Data;
 using Name;
-using Microsoft.Extensions.ObjectPool;
+using Microsoft.AspNetCore.Mvc;
+using UsersAPI.Tests.Controllers;
 
 namespace UsersAPI.Repositories
 {
@@ -20,8 +21,9 @@ namespace UsersAPI.Repositories
         {
             return db.Users.ToList();
         }
-        public async Task<string> SendOTP(UserOTP user)
+        public async Task<ApiResponseDto> SendOTP(UserOTP user)
         {
+
             IEnumerable<City> cities = db.City.ToList();
             int size = cities.Count();
 
@@ -54,7 +56,7 @@ namespace UsersAPI.Repositories
 
             db.SaveChanges();
 
-            return "success";
+            return new ApiResponseDto { Status = "success" };
         }
     }
 

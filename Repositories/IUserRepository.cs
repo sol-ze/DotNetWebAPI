@@ -8,6 +8,6 @@ namespace UsersAPI.Repositories
     {
         IEnumerable<User> GetUsers();
 
-        public Task<string> SendOTP(UserOTP userOtp);
+        public Task<ApiResponseDto> SendOTP(UserOTP userOtp);
     }
 }

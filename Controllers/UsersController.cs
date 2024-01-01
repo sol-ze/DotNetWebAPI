@@ -26,22 +26,27 @@ namespace UsersAPI.Controllers
 
 
         [HttpPost("createOTP")]
-        public async Task<IActionResult> SendOTP([FromBody] UserOTP userOtp)
+        public async Task<ActionResult> SendOTP([FromBody] UserOTP userOtp)
         {
             try
             {
                 if (userOtp is null || userOtp.Email is null)
-                    return StatusCode(400, new { Status = "Email cannot be null" });
+                {
+                    return BadRequest(new ApiResponseDto { Status = "fail" });
+                }
 
-                if (userOtp.Email == "")
-                    return StatusCode(400, new { Status = "Email cannot be empty" });
+                if (!userOtp.Email.IsValidEmail())
+                {
+                    return BadRequest(new ApiResponseDto { Status = "fail" });
+                }
 
                 await repository.SendOTP(userOtp);
-                return Ok(new { Status = "success" });
+
+                return new OkObjectResult(new ApiResponseDto { Status = "success" });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { Status = "fail", message = ex.Message });
+                return StatusCode(500, new ApiResponseDto { Status = "fail" });
             }
         }
     }

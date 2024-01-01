@@ -1,9 +1,10 @@
+using System.Text.RegularExpressions;
 using UsersAPI.Dtos;
 using UsersAPI.Models;
 
 namespace UsersAPI
 {
-    public static class Extensions
+    public static partial class Extensions
     {
         public static UserDto AsDto(this User user)
         {
@@ -45,6 +46,16 @@ namespace UsersAPI
             return random.Next(1, n + 1);
 
         }
+
+        public static bool IsValidEmail(this string email)
+        {
+            return MyRegex().IsMatch(email);
+        }
+
+        [GeneratedRegex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$")]
+        private static partial Regex MyRegex();
     }
+
+
 
 }
