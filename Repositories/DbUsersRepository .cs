@@ -58,6 +58,23 @@ namespace UsersAPI.Repositories
 
             return new ApiResponseDto { Status = "success" };
         }
+
+        public Boolean UserHasRequestedOTPWithin5Minutes(string email)
+        {
+            DateTimeOffset now = DateTimeOffset.UtcNow;
+
+            // Calculate the timestamp 5 minutes ago
+            DateTimeOffset fiveMinutesAgo = now.AddMinutes(-5);
+
+            // Check if there are any records within the last 5 minutes
+            var count = db.UserVerificationCodes
+                .Where(u => u.Email == email && u.CreationTime >= fiveMinutesAgo)
+                .Count();
+
+            // Return true if count is greater than 0, indicating a request within the last 5 minutes
+            return count > 0;
+
+        }
     }
 
 }

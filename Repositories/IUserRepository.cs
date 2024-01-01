@@ -9,5 +9,7 @@ namespace UsersAPI.Repositories
         IEnumerable<User> GetUsers();
 
         public Task<ApiResponseDto> SendOTP(UserOTP userOtp);
+
+        Boolean UserHasRequestedOTPWithin5Minutes(string email);
     }
 }

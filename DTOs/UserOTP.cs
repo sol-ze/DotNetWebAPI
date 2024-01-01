@@ -7,8 +7,6 @@ namespace UsersAPI.Dtos
         [EmailAddress(ErrorMessage = "Invalid email address")]
         public required string Email { get; set; }
 
-        //public DateTimeOffset CreationDate { get; init; }
-
     }
 
 }
